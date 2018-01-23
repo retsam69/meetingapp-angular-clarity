@@ -9,7 +9,7 @@
     <div class="header-actions">
       <clr-dropdown>
         <button class="nav-text" clrDropdownTrigger>
-          admin@noreply.com
+          {{ fullName }}
           <clr-icon shape="caret down"></clr-icon>
         </button>
         <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
@@ -23,47 +23,71 @@
     <div class="content-area">
       ...
     </div>
-    <clr-vertical-nav [clrVerticalNavCollapsible]="collapsible" [(clrVerticalNavCollapsed)]="collapsed">
-      <clr-vertical-nav-group routerLinkActive="active">
+    <clr-vertical-nav [clrVerticalNavCollapsible]="collapsible" [(clrVerticalNavCollapsed)]="collapsed" [clr-nav-level]="1">
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./home">
         <clr-icon shape="home" clrVerticalNavIcon></clr-icon>
         หน้าแรก
+      </a>
+      <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="users" clrVerticalNavIcon></clr-icon>
+        ห้องประชุม
         <clr-vertical-nav-group-children>
           <a clrVerticalNavLink routerLink="./normal/pidgey" routerLinkActive="active">
-            Pidgey
+            การจองห้องประชุม
           </a>
           <a clrVerticalNavLink routerLink="./normal/snorlax" routerLinkActive="active">
-            Snorlax
+            แสดงแบบเต็มหน้าจอ
           </a>
         </clr-vertical-nav-group-children>
       </clr-vertical-nav-group>
       <clr-vertical-nav-group routerLinkActive="active">
         <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
-        ห้องประชุม
+        ตั้งค่าห้องประชุม
         <clr-vertical-nav-group-children>
-          <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
-            Charmander
+          <a clrVerticalNavLink routerLink="./admin/room" routerLinkActive="active">
+            จัดการห้องประชุม
           </a>
-          <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">
-            Charizard
+          <a clrVerticalNavLink routerLink="./admin/food" routerLinkActive="active">
+            จัดการอุปกรณ์
+          </a>
+          <a clrVerticalNavLink routerLink="./admin/food" routerLinkActive="active">
+            จัดการประเภทอาหาร
           </a>
         </clr-vertical-nav-group-children>
       </clr-vertical-nav-group>
       <clr-vertical-nav-group routerLinkActive="active">
-        <clr-icon shape="bolt" clrVerticalNavIcon></clr-icon>
-        ตั้งค่าระบบ
+        <clr-icon shape="administrator" clrVerticalNavIcon></clr-icon>
+        ตั้งค่าผู้ใช้งาน
         <clr-vertical-nav-group-children>
-          <a clrVerticalNavLink routerLink="./electric/pikachu" routerLinkActive="active">
-            Pikachu
+          <a clrVerticalNavLink routerLink="./admin/user" routerLinkActive="active">
+            จัดการผู้ใช้งานระบบ
           </a>
-          <a clrVerticalNavLink routerLink="./electric/raichu" routerLinkActive="active">
-            Raichu
+          <a clrVerticalNavLink routerLink="./admin/role" routerLinkActive="active">
+            จัดการสิทธิ์เข้าใช้ระบบ
+          </a>
+          <a clrVerticalNavLink routerLink="./admin/position" routerLinkActive="active">
+            จัดการตำแหน่ง
+          </a>
+          <a clrVerticalNavLink routerLink="./admin/division" routerLinkActive="active">
+            จัดการหน่วยงานกรม/กอง
+          </a>
+          <a clrVerticalNavLink routerLink="./admin/subdivision" routerLinkActive="active">
+            จัดการหน่วยงานกลุ่มงาน/ฝ่าย
           </a>
         </clr-vertical-nav-group-children>
       </clr-vertical-nav-group>
-      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
-        <clr-icon shape="users" clrVerticalNavIcon></clr-icon>
-        ผู้ใช้งาน
-      </a>
+      <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="dashboard" clrVerticalNavIcon></clr-icon>
+        รายงาน
+        <clr-vertical-nav-group-children>
+          <a clrVerticalNavLink routerLink="./report/room" routerLinkActive="active">
+            รายงานการจองห้องประชุม
+          </a>
+          <a clrVerticalNavLink routerLink="./report/payment" routerLinkActive="active">
+            รายงานค่าใช้จ่าย
+          </a>
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
     </clr-vertical-nav>
   </div>
 </clr-main-container>
