@@ -8,9 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'ระบบจองห้องประชุม';
-
   // enable-disable nav-left
-  collapsible: boolean = true;
+  collapsible: boolean = false;
   collapsed: boolean = true;
 
 }
